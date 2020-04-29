@@ -5,7 +5,9 @@ import { getStores, deleteStore } from '../../actions/stores';
 
 export class Stores extends Component {
   static propTypes = {
-    stores: PropTypes.array.isRequired
+    stores: PropTypes.array.isRequired,
+    getStores: PropTypes.func.isRequired,
+    deleteStore: PropTypes.func.isRequired
   }
 
   componentDidMount() {

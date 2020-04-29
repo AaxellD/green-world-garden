@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_STORES, DELETE_STORE } from './types';
+import { GET_STORES, DELETE_STORE, ADD_STORE } from './types';
 
 // GET STORES
 export const getStores = () => dispatch => {
