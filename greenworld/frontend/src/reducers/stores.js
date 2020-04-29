@@ -1,17 +1,22 @@
-import { GET_STORES } from '../actions/types.js';
+import { GET_STORES, DELETE_STORE } from '../actions/types.js';
 
 const initialState = {
     stores:[]
 }
 
-export default function(state = initialState, action){
+export default function(state = initialState, action) {
     switch(action.type) {
         case GET_STORES:
             return {
                 ...state,
-                leads:action.payload 
+                stores:action.payload 
             };
-            default:
-                return state;
+        case DELETE_STORE:
+            return {
+                ...state,
+                stores:state.stores.filter(store => store.id !== action.payload)
+            };
+        default:
+            return state;
     }
 }

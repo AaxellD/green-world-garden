@@ -133,8 +133,10 @@ STATIC_URL = '/static/'
 #     os.path.join(BASE_DIR,'gwgarden/build/static'),
 # ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
+
+# --- removed during redux section to get DELETE to work....
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+#     ]
+# }
