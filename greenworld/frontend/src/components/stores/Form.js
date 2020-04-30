@@ -1,4 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { addStore } from '../../actions/stores';
+
 
 export class Form extends Component {
     state = {
@@ -6,14 +10,20 @@ export class Form extends Component {
         quantity:'',
         price:'',
         zipcode:''
-    }
+    };
+
+    static propTypes = {
+        addStore: PropTypes.func.isRequired
+    };
 
     onChange = e => this.setState({ [e.target.name]:e.target.value });
 
     onSubmit = (e) => {
         e.preventDefault();
-        console.log("submit");
-    } 
+        const { name, quantity, price, zipcode } = this.state;
+        const store = { name, quantity, price, zipcode};
+        this.props.addStore(store);
+    };
     
     render() {
         const { name, quantity, price, zipcode } = this.state;
@@ -70,4 +80,4 @@ export class Form extends Component {
     }
 }
 
-export default Form
+export default connect(null, { addStore })(Form);

@@ -14,7 +14,7 @@ export const getStores = () => dispatch => {
         .catch(err => console.log(err));
 }
 
-// DELETE LEAD
+// DELETE STORE
 export const deleteStore = (id) => dispatch => {
     axios
         .delete(`/api/stores/${id}/`)
@@ -26,3 +26,18 @@ export const deleteStore = (id) => dispatch => {
         })
         .catch(err => console.log(err));
 }
+
+// ADD STORE
+export const addStore = (store) => dispatch => {
+    axios
+        .post('/api/stores/', store)
+        .then(res => {
+            dispatch({
+                type: ADD_STORE,
+                payload: res.data
+            });
+        })
+        .catch(err => console.log(err.response.data));
+}
+
+// EDIT 
