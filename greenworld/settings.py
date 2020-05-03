@@ -25,7 +25,7 @@ SECRET_KEY = '@0we1o2uccy2+l_-m@me*se^xh(^7t^l!8@@#4*y@=lq=7+6+b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['green-world-garden.herokuapp.com']
+ALLOWED_HOSTS = ['green-world-garden.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -131,7 +131,7 @@ STATIC_DIRS = [
     os.path.join(BASE_DIR, 'frontend/static')
 ]
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # --- removed during redux section to get DELETE to work....
